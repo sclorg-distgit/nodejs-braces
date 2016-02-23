@@ -7,11 +7,11 @@
 Summary:       Fastest brace expansion for node.js
 Name:          %{?scl_prefix}nodejs-%{npm_name}
 Version:       1.8.2
-Release:       3%{?dist}
+Release:       7%{?dist}
 License:       MIT
 URL:           https://github.com/jonschlinkert/braces
 Source0:       http://registry.npmjs.org/%{npm_name}/-/%{npm_name}-%{version}.tgz
-BuildRequires: nodejs010-runtime
+BuildRequires: %{?scl_prefix}runtime
 ExclusiveArch: %{nodejs_arches} noarch
 BuildArch:     noarch
 Provides:      %{?scl_prefix}nodejs-%{npm_name} = %{version}
@@ -47,6 +47,18 @@ cp -pr index.js package.json utils.js %{buildroot}%{nodejs_sitelib}/%{npm_name}
 %{nodejs_sitelib}/%{npm_name}
 
 %changelog
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.8.2-7
+- Use proper macro in -runtime dependency
+
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.8.2-6
+- Use proper macro in -runtime dependency
+
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.8.2-5
+- Use proper macro in -runtime dependency
+
+* Sun Feb 14 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.8.2-4
+- rebuilt
+
 * Mon Jan 11 2016 Tomas Hrcka <thrcka@redhat.com> - 1.8.2-3
 - Enable scl macros
 
